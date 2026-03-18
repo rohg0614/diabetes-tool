@@ -1,0 +1,31 @@
+# API
+fastapi==0.135.1
+uvicorn==0.42.0
+python-jose==3.5.0
+passlib==1.7.4
+bcrypt==5.0.0
+python-dotenv==1.2.2
+
+# Database
+sqlalchemy==2.0.48
+alembic==1.18.4
+psycopg2-binary==2.9.11
+supabase==2.28.2
+
+# ML
+scikit-learn
+xgboost==3.2.0
+shap==0.51.0
+numpy
+pandas==2.3.3
+
+# Visualization & Frontend
+streamlit==1.55.0
+matplotlib
+seaborn
+
+# PDF
+reportlab==4.4.10
+
+# Validation
+pydantic==2.12.5
