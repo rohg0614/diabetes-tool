@@ -1,0 +1,34 @@
+{
+  "model": "XGBoostClassifier",
+  "version": "1.0.0",
+  "features": [
+    "age",
+    "gender",
+    "bmi",
+    "high_bp",
+    "high_cholesterol",
+    "smoker",
+    "physically_active",
+    "polyuria",
+    "polydipsia",
+    "sudden_weight_loss"
+  ],
+  "roc_auc_test": 0.7978,
+  "roc_auc_cv_mean": 0.7938,
+  "roc_auc_cv_std": 0.002,
+  "training_samples": 203974,
+  "test_samples": 50994,
+  "diabetes_rate_train": 0.1409,
+  "datasets": [
+    "PIMA Indians",
+    "CDC BRFSS",
+    "Sylhet"
+  ],
+  "scale_pos_weight": 6.1,
+  "limitations": [
+    "BRFSS dominates training data (99.5% of samples)",
+    "Sylhet features (polyuria, polydipsia) underrepresented",
+    "No Indian population specific data",
+    "Survey-based features may not reflect clinical measurements"
+  ]
+}
