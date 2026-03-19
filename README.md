@@ -122,13 +122,12 @@ Currently in active development.
 - [x] Project scaffold
 - [x] Database schema and migrations
 - [x] Dataset acquisition
-- [ ] EDA and dataset harmonization
-- [ ] Model training and evaluation
+- [x] EDA and dataset harmonization
+- [x] Model training and evaluation
 - [ ] FastAPI backend
 - [ ] Streamlit frontend
 - [ ] PDF report generation
 - [ ] Auth layer
-
 ---
 
 ## Academic Context
