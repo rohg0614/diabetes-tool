@@ -44,3 +44,6 @@ app.include_router(auth_router)
 
 from backend.api.risk import router as risk_router
 app.include_router(risk_router)
+
+from backend.api.patient import router as patient_router
+app.include_router(patient_router)
