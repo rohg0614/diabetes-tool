@@ -10,6 +10,11 @@ from typing import Optional
 router = APIRouter(prefix="/risk", tags=["Risk Assessment"])
 
 @router.post("/assess", response_model=RiskAssessmentResponse)
+
+@router.post("/assess-public", response_model=RiskAssessmentResponse)
+def assess_public(input_data: RiskAssessmentInput):
+    result = assess_risk(input_data.model_dump())
+    return result
 def assess(
     input_data: RiskAssessmentInput,
     db: Session = Depends(get_db),
