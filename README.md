@@ -124,10 +124,17 @@ Currently in active development.
 - [x] Dataset acquisition
 - [x] EDA and dataset harmonization
 - [x] Model training and evaluation
-- [ ] FastAPI backend
-- [ ] Streamlit frontend
+- [x] FastAPI backend
+- [x] Streamlit frontend
+- [x] Auth layer
+- [x] Risk assessment endpoint with SHAP
+- [x] Patient management — glucose logging, episode detection
+- [x] Medication tracking and adherence
 - [ ] PDF report generation
-- [ ] Auth layer
+- [ ] Patient profile setup flow in frontend
+- [ ] UI polish — homepage, disclaimers, dark mode toggle
+- [ ] React frontend (Phase 2)
+- [ ] Kotlin mobile app (Phase 3)
 ---
 
 ## Academic Context
