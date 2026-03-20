@@ -41,3 +41,6 @@ def health():
 
 from backend.api.auth import router as auth_router
 app.include_router(auth_router)
+
+from backend.api.risk import router as risk_router
+app.include_router(risk_router)
