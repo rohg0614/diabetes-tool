@@ -130,9 +130,12 @@ Currently in active development.
 - [x] Risk assessment endpoint with SHAP
 - [x] Patient management — glucose logging, episode detection
 - [x] Medication tracking and adherence
-- [ ] PDF report generation
+- [x] PDF report generation
 - [ ] Patient profile setup flow in frontend
-- [ ] UI polish — homepage, disclaimers, dark mode toggle
+- [ ] Homepage / landing page
+- [ ] Prominent disclaimer on risk assessment
+- [ ] Dark mode toggle
+- [ ] UI polish pass
 - [ ] React frontend (Phase 2)
 - [ ] Kotlin mobile app (Phase 3)
 ---
