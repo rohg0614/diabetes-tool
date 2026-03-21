@@ -1,3 +1,4 @@
+from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from backend.models.database import get_db
@@ -129,3 +130,22 @@ def get_adherence_summary(
 ):
     profile = get_patient_or_404(db, current_user.id)
     return get_adherence_rate(db, profile.id)
+
+from fastapi.responses import Response
+
+@router.get("/report")
+def download_report(
+    days: int = 30,
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_user)
+):
+    from backend.services.report_service import generate_patient_report
+    profile = get_patient_or_404(db, current_user.id)
+    pdf_bytes = generate_patient_report(db, current_user, profile, days)
+    return Response(
+        content=pdf_bytes,
+        media_type="application/pdf",
+        headers={
+            "Content-Disposition": f"attachment; filename=diabetes_report_{datetime.utcnow().strftime('%Y%m%d')}.pdf"
+        }
+    )

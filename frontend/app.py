@@ -383,4 +383,37 @@ elif page == "Medications":
 
 elif page == "Reports":
     st.title("Reports")
-    st.info("PDF report generation coming soon.")
+    st.subheader("Generate Clinical Report")
+
+    col1, col2 = st.columns(2)
+    with col1:
+        days = st.selectbox("Report Period", [7, 14, 30, 60, 90], index=2)
+    with col2:
+        st.write("")
+        st.write("")
+        if st.button("Generate PDF Report", use_container_width=True, type="primary"):
+            with st.spinner("Generating your report..."):
+                res = api_get(f"/patient/report?days={days}")
+                if res.status_code == 200:
+                    st.download_button(
+                        label="Download Report PDF",
+                        data=res.content,
+                        file_name=f"diabetes_report_{days}days.pdf",
+                        mime="application/pdf",
+                        use_container_width=True
+                    )
+                    st.success("Report generated successfully.")
+                else:
+                    st.error("Failed to generate report.")
+
+    st.divider()
+    st.markdown("""
+    **What's included in the report:**
+    - Patient information and clinical targets
+    - Glucose summary — average, time in range, estimated HbA1c
+    - Recent glucose readings table
+    - Detected hypo/hyperglycemic episodes
+    - Medication list with adherence rates
+    - Clinical disclaimer
+    """)
+    st.caption("Reports are designed to be shared with your healthcare provider.")
