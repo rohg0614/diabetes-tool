@@ -81,18 +81,13 @@ The Streamlit prototype remains functional and is used for rapid feature validat
 ## Project Structure
 ```
 diabetes-tool/
-├── backend/
-│   ├── api/              # FastAPI route handlers
-│   ├── models/           # SQLAlchemy DB models
-│   ├── ml/               # Training scripts, saved models
-│   ├── services/         # Business logic
-│   ├── schemas/          # Pydantic schemas
-│   └── main.py
-├── frontend/             # Streamlit app
-├── data/                 # Raw and processed datasets
-├── notebooks/            # EDA and model training
-├── alembic/              # Database migrations
-└── requirements.txt
+├── backend/          ← FastAPI + all endpoints
+├── frontend_streamlit/ ← Working Streamlit prototype
+├── frontend_react/   ← Vite + React (in progress)
+├── notebooks/        ← EDA + harmonization + model training
+├── data/            ← processed datasets
+├── alembic/         ← DB migrations
+└── README.md
 ```
 
 ---
