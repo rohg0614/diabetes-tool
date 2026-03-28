@@ -40,6 +40,20 @@ Mobile    →  Kotlin (Phase 3)
 
 ---
 
+## Frontend
+
+The production frontend is built with Vite + React + TypeScript, replacing the Streamlit prototype. It features the GlucoPulse dark theme design system with the following pages:
+
+- Landing page with real model metrics, bento grid feature layout, and dataset links
+- Risk assessment with SHAP contribution visualization
+- Patient dashboard with glucose trends and episode history
+- Medication tracking and adherence
+- Clinical PDF report generation and download
+
+The Streamlit prototype remains functional and is used for rapid feature validation.
+
+---
+
 ## Features
 
 - ML-powered diabetes risk scoring with per-feature explanation
@@ -53,14 +67,14 @@ Mobile    →  Kotlin (Phase 3)
 
 ## Tech Stack
 
-- **Language** — Python 3.11
+- **Language** — Python 3.11 (backend), TypeScript (frontend)
 - **API** — FastAPI, Uvicorn
-- **Database** — PostgreSQL, SQLAlchemy, Alembic
+- **Database** — PostgreSQL on Neon, SQLAlchemy, Alembic
 - **ML** — XGBoost, scikit-learn, SHAP, pandas, numpy
-- **Frontend** — Streamlit
+- **Frontend** — Vite + React + TypeScript (Phase 2), Streamlit (Phase 1 prototype)
 - **Auth** — JWT, bcrypt, python-jose
 - **PDF** — ReportLab
-- **Environment** — Miniforge, conda
+- **Environment** — Miniforge, conda (backend), Node.js + npm (frontend)
 
 ---
 
@@ -125,27 +139,31 @@ Currently in active development.
 - [x] EDA and dataset harmonization
 - [x] Model training and evaluation
 - [x] FastAPI backend
-- [x] Streamlit frontend
+- [x] Streamlit frontend (Phase 1 — functional prototype)
 - [x] Auth layer
 - [x] Risk assessment endpoint with SHAP
 - [x] Patient management — glucose logging, episode detection
 - [x] Medication tracking and adherence
 - [x] PDF report generation
-- [ ] Patient profile setup flow in frontend
-- [ ] Homepage / landing page
-- [ ] Prominent disclaimer on risk assessment
-- [ ] Dark mode toggle
-- [ ] UI polish pass
-- [ ] React frontend (Phase 2)
-- [ ] Kotlin mobile app (Phase 3)
+- [x] Vite + React frontend (Phase 2 — in progress)
+- [x] Landing page with GlucoPulse branding
+- [ ] Login and Register pages
+- [ ] Risk assessment page with SHAP visualization
+- [ ] Patient dashboard
+- [ ] Medications and adherence UI
+- [ ] Reports page
+- [ ] Google OAuth
+- [ ] Flutter mobile app (Phase 3)
+- [ ] Production deployment
 ---
 
 ## Academic Context
 
 Built as a data science and ML portfolio project. Intended for review and extension in collaboration with university faculty across DBMS, Algorithms, and AI domains.
 
+
 ---
 
 ## Author
 
-Rohin Gupta
+Rohin Gupta — [github.com/rohg0614](https://github.com/rohg0614)
