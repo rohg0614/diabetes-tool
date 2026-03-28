@@ -40,3 +40,9 @@ data/processed/
 
 # Alembic
 alembic/versions/*.pyc
+frontend_react/node_modules/
+# React frontend
+frontend_react/node_modules/
+frontend_react/dist/
+frontend_react/.env
+frontend_react/.env.local
