@@ -11,6 +11,7 @@ export default function Navbar() {
 
   const handleLogout = () => {
     localStorage.removeItem('token')
+    localStorage.removeItem('user')
     setIsLoggedIn(false)
     navigate('/')
   }
@@ -36,7 +37,12 @@ export default function Navbar() {
           <Link to="/" style={{textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, color: 'rgba(229,226,225,0.7)'}}>Home</Link>
           <Link to="/risk" style={{textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, color: 'rgba(229,226,225,0.7)'}}>Risk Analysis</Link>
           {isLoggedIn && (
-            <Link to="/dashboard" style={{textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, color: 'rgba(229,226,225,0.7)'}}>Dashboard</Link>
+            <>
+              <Link to="/dashboard" style={{textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, color: 'rgba(229,226,225,0.7)'}}>Dashboard</Link>
+              <Link to="/log" style={{textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, color: 'rgba(229,226,225,0.7)'}}>Log Reading</Link>
+              <Link to="/medications" style={{textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, color: 'rgba(229,226,225,0.7)'}}>Medications</Link>
+              <Link to="/reports" style={{textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, color: 'rgba(229,226,225,0.7)'}}>Reports</Link>
+            </>
           )}
           <a href="https://github.com/rohg0614/diabetes-tool" target="_blank" rel="noopener noreferrer"
             style={{textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, color: 'rgba(229,226,225,0.7)'}}>

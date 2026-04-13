@@ -142,11 +142,11 @@ Currently in active development.
 - [x] PDF report generation
 - [x] Vite + React frontend (Phase 2 — in progress)
 - [x] Landing page with GlucoPulse branding
-- [ ] Login and Register pages
-- [ ] Risk assessment page with SHAP visualization
-- [ ] Patient dashboard
-- [ ] Medications and adherence UI
-- [ ] Reports page
+- [x] Login and Register pages
+- [x] Risk assessment page with SHAP visualization
+- [x] Patient dashboard
+- [x] Medications and adherence UI
+- [x] Reports page
 - [ ] Google OAuth
 - [ ] Flutter mobile app (Phase 3)
 - [ ] Production deployment

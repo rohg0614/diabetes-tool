@@ -13,6 +13,11 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true)
   const [markingTaken, setMarkingTaken] = useState<number | null>(null)
 
+  const hour = new Date().getHours()
+  const greeting = hour < 12 ? 'Good Morning' : hour < 17 ? 'Good Afternoon' : hour < 21 ? 'Good Evening' : 'Good Night'
+  const user = JSON.parse(localStorage.getItem('user') || '{}')
+  const firstName = user.full_name?.split(' ')[0] || 'there'
+
   useEffect(() => {
     if (!localStorage.getItem('token')) {
       navigate('/login')
@@ -33,7 +38,6 @@ export default function Dashboard() {
       setEpisodes(episodesRes.data)
       setMedications(medsRes.data)
     } catch {
-      // patient profile may not exist yet
     } finally {
       setLoading(false)
     }
@@ -43,12 +47,7 @@ export default function Dashboard() {
     setMarkingTaken(medId)
     try {
       const now = new Date().toISOString()
-      await logAdherence({
-        medication_id: medId,
-        scheduled_time: now,
-        taken_at: now,
-        was_taken: true
-      })
+      await logAdherence({ medication_id: medId, scheduled_time: now, taken_at: now, was_taken: true })
     } finally {
       setMarkingTaken(null)
     }
@@ -79,9 +78,14 @@ export default function Dashboard() {
       <Navbar />
 
       <div style={{maxWidth: '80rem', margin: '0 auto', padding: '8rem 2rem 4rem'}}>
-        <h1 style={{fontSize: '2rem', fontWeight: 800, fontFamily: 'Manrope, sans-serif', marginBottom: '2rem'}}>
-          Patient Dashboard
+
+        {/* Greeting */}
+        <h1 style={{fontSize: '2rem', fontWeight: 800, fontFamily: 'Manrope, sans-serif', marginBottom: '0.25rem'}}>
+          {greeting}, {firstName}
         </h1>
+        <p style={{color: '#bdc9ca', marginBottom: '2rem', fontSize: '0.875rem'}}>
+          {new Date().toLocaleDateString('en-US', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}
+        </p>
 
         {loading ? (
           <div style={{textAlign: 'center', color: '#bdc9ca', padding: '4rem'}}>Loading your data...</div>
